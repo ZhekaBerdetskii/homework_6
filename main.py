@@ -72,17 +72,21 @@ def remove_empty_folders(path: Path):
 
 
 if __name__ == '__main__':
-    source = Path(sys.argv[1])
-    read_folder(source)
-    remove_empty_folders(source)
-    print(f'Images: {image}')
-    print(f'Video: {video}')
-    print(f'Documents: {documents}')
-    print(f'Audio: {audio}')
-    print(f'Archives: {archive}')
-    print(f'Other: {other}')
-    print(f'File extensions: {EXTENSION}')
-    print(f'Unknown file extensions: {OTHER}')
+    try:
+        source = Path(sys.argv[1])
+        read_folder(source)
+        remove_empty_folders(source)
+        print(f'Images: {image}')
+        print(f'Video: {video}')
+        print(f'Documents: {documents}')
+        print(f'Audio: {audio}')
+        print(f'Archives: {archive}')
+        print(f'Other: {other}')
+        print(f'File extensions: {EXTENSION}')
+        print(f'Unknown file extensions: {OTHER}')
+    except IndexError:
+        print('Please enter folder name to scan!')
+
 
 
 
